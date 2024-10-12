@@ -29,14 +29,73 @@
         },
       };
     </script>
+
+    <!-- vanilla css -->
+    <style>
+      .banner-background {
+        background-image: linear-gradient(
+            rgba(16, 15, 15, 0.7),
+            rgba(16, 15, 15, 0.7)
+          ),
+          url(./assets/banner_1.png);
+
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
   </head>
   <body class="font-poppins">
     <header>
       <!-- navbar -->
-      <nav class="w-11/12 mx-auto flex justify-between items-center my-[30px] ">
+      <nav class="w-11/12 mx-auto flex justify-between items-center my-[30px]">
         <h1 class="text-2xl font-bold">Tasty Hut</h1>
-        <button class="text-xl font-bold px-10 py-4 rounded-lg bg-[#FFC107]">Sign Up</button>
+        <button class="text-xl font-bold px-10 py-4 rounded-lg bg-[#FFC107]">
+          Sign Up
+        </button>
       </nav>
+
+      <!-- banner section -->
+      <section class="banner-background">
+        <!-- text contents -->
+        <div class="w-11/12 mx-auto py-[155px] text-white text-center">
+          <h1 class="text-[65px] font-bold lg:w-3/5 mx-auto">
+            Taste Our Delicious Best Foods
+          </h1>
+          <p class="text-lg mt-6 mb-8 lg:w-3/5 mx-auto">
+            There are many variations of passages of Lorem Ipsum available, but
+            the majority have suffered alteration in some form, by injected
+            humou.
+          </p>
+          <div class="flex items-center justify-center text-[#706F6F] -space-x-6">
+            <div class="flex justify-center items-center -space-x-11 w-[600px]">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="#706F6F"
+                class="size-6 z-10"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                />
+              </svg>
+              <input
+                class="py-[18px] px-[54px] rounded-lg w-full outline-none"
+                type="text"
+                placeholder="Search any food"
+              />
+            </div>
+            <button
+              class="text-xl font-bold px-10 py-4 rounded-lg bg-[#FFC107] text-black"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+      </section>
     </header>
 
     <main></main>
