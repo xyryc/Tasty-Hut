@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,6 +29,13 @@
         },
       };
     </script>
+
+    <!-- daisyUI -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
 
     <!-- vanilla css -->
     <style>
@@ -66,7 +73,9 @@
             the majority have suffered alteration in some form, by injected
             humou.
           </p>
-          <div class="flex items-center justify-center text-[#706F6F] -space-x-6">
+          <div
+            class="flex items-center justify-center text-[#706F6F] -space-x-6"
+          >
             <div class="flex justify-center items-center -space-x-11 w-[600px]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -100,6 +109,47 @@
 
     <main></main>
 
-    <footer></footer>
+    <footer class="footer py-[120px] w-11/12 mx-auto">
+      <nav>
+        <h6 class="mb-4  text-2xl font-bold text-[#403F3F]">Section</h6>
+        <a class="link link-hover text-xl font-medium">Home</a>
+        <a class="link link-hover text-xl font-medium text-[#403F3F]">Features</a>
+        <a class="link link-hover text-xl font-medium text-[#403F3F]">Pricing</a>
+        <a class="link link-hover text-xl font-medium text-[#403F3F]">FAQs</a>
+        <a class="link link-hover text-xl font-medium text-[#403F3F]">About</a>
+      </nav>
+      <nav>
+        <h6 class="mb-4  text-2xl font-bold text-[#403F3F]">Company</h6>
+        <a class="link link-hover text-xl font-medium text-[#403F3F]">About us</a>
+        <a class="link link-hover text-xl font-medium text-[#403F3F]">Contact</a>
+        <a class="link link-hover text-xl font-medium text-[#403F3F]">Jobs</a>
+        <a class="link link-hover text-xl font-medium text-[#403F3F]">Press kit</a>
+      </nav>
+      <nav>
+        <h6 class="mb-4 text-2xl font-bold text-[#403F3F]">Legal</h6>
+        <a class="link link-hover text-xl font-medium text-[#403F3F]">Support</a>
+        <a class="link link-hover text-xl font-medium text-[#403F3F]">Terms of use</a>
+        <a class="link link-hover text-xl font-medium text-[#403F3F]">Privacy policy</a>
+        <a class="link link-hover text-xl font-medium text-[#403F3F]">Cookie policy</a>
+      </nav>
+      <form>
+        <h6 class="mb-4 text-2xl font-bold text-[#403F3F]">Newsletter</h6>
+        <fieldset class="form-control w-80">
+          <label class="label">
+            <span class="label-text text-lg text-[#706F6F] mb-3">Enter your email address and get our daily updates and offers.</span>
+          </label>
+          <div class="flex flex-col lg:flex-row gap-4">
+            <input
+              type="text"
+              placeholder="Email address"
+              class="px-6 py-5 border rounded-lg outline-none"
+            />
+            <button class="text-xl font-bold px-10 py-4 rounded-lg bg-[#FFC107]">
+              Subscribe
+            </button>
+          </div>
+        </fieldset>
+      </form>
+    </footer>
   </body>
 </html>
