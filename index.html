@@ -49,6 +49,27 @@
         background-repeat: no-repeat;
         background-size: cover;
       }
+
+      /* spinner styles */
+      #spinner {
+        display: none;
+        width: 40px;
+        height: 40px;
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        border-top: 4px solid #000;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 20px auto;
+      }
+      /* spinner animations */
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
     </style>
   </head>
   <body class="font-poppins">
@@ -92,12 +113,14 @@
                 />
               </svg>
               <input
+                id="search-box"
                 class="py-[18px] px-[54px] rounded-lg w-full outline-none"
                 type="text"
                 placeholder="Search any food"
               />
             </div>
             <button
+              onclick="handleSearch()"
               class="text-xl font-bold px-10 py-4 rounded-lg bg-[#FFC107] text-black"
             >
               Search
@@ -114,6 +137,9 @@
         <h1 class="text-4xl font-semibold mb-[50px] text-center">
           Your Favourite Food
         </h1>
+
+        <!-- spinner -->
+        <div id="spinner"></div>
 
         <!-- meals cart container -->
         <div

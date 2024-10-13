@@ -107,4 +107,11 @@ const mealDetails = async (idMeal) => {
   detailsModal.showModal();
 };
 
+const handleSearch = () => {
+  // document.getElementById('spinner').style.display = 'block'
+
+  const searchText = document.getElementById("search-box").value;
+  console.log(searchText)
+};
+
 loadAllMeals();
