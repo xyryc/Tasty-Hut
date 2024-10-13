@@ -59,7 +59,50 @@ const mealDetails = async (idMeal) => {
     `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`
   );
   const data = await response.json();
-  console.log(data.meals[0]);
+  console.log(data.meals[0].strMeal);
+
+  const modalContainer = document.getElementById("modal-container");
+  modalContainer.innerHTML = `
+          <dialog id="detailsModal" class="modal">
+            <div class="modal-box w-11/12 max-w-2xl">
+                <form method="dialog">
+                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                </form>
+              <h3 class="text-3xl font-bold">${data.meals[0].strMeal}</h3>
+              <div class="divider"></div>
+              <img
+                class="w-[672px] h-[410px] rounded-lg object-cover"
+                src="${data.meals[0].strMealThumb}"
+                alt=""
+              />
+              <div class="my-10 space-y-4">
+                <p class="text-xl font-semibold">
+                  Category:
+                  <span class="font-normal text-[#706F6F]">${data.meals[0].strCategory}</span>
+                </p>
+                <p class="text-xl font-semibold">
+                  Area: <span class="font-normal text-[#706F6F]">${data.meals[0].strArea}</span>
+                </p>
+                <p class="text-xl font-semibold">
+                  Instructions:
+                  <span class="font-normal text-[#706F6F]">${data.meals[0].strInstructions}</span>
+                </p>
+                <p class="text-xl font-semibold">
+                  Youtube:
+                  <span class="font-normal text-[#706F6F]"
+                    ><a href="${data.meals[0].strYoutube}" target="_blank">${data.meals[0].strYoutube}</a>
+                  </span>
+                </p>
+              </div>
+              <div class="modal-action">
+                <form method="dialog">
+                  <!-- if there is a button, it will close the modal -->
+                  <button class="btn btn-error text-white">Close</button>
+                </form>
+              </div>
+            </div>
+          </dialog>
+  `;
 
   detailsModal.showModal();
 };
