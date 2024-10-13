@@ -116,9 +116,10 @@
         </h1>
 
         <!-- meals cart container -->
-        <div 
-        id="meals-container"
-        class="grid grid-cols-1 sm:grid-cols-2 justify-items-center gap-6">
+        <div
+          id="meals-container"
+          class="grid grid-cols-1 sm:grid-cols-2 justify-items-center gap-6"
+        >
           <!-- card -->
           <div
             class="flex items-center justify-center border rounded-lg hover:bg-gray-100 duration-200 ease-in-out"
@@ -212,6 +213,7 @@
         <!-- button -->
         <div class="text-center mt-[85px]">
           <button
+            onclick="handleShowAll()"
             class="text-xl font-bold px-10 py-4 rounded-lg bg-[#FFC107] hover:scale-105 duration-300"
           >
             Show All
@@ -287,6 +289,6 @@
     </footer>
 
     <!-- script -->
-     <script src="./scripts/app.js"></script>
+    <script src="./scripts/app.js"></script>
   </body>
 </html>

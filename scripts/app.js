@@ -1,9 +1,14 @@
-const loadAllMeals = async () => {
+const loadAllMeals = async (status) => {
   const response = await fetch(
     "https://www.themealdb.com/api/json/v1/1/filter.php?a=Italian"
   );
   const data = await response.json();
-  displayAllMeals(data.meals);
+
+  if (status) {
+    displayAllMeals(data.meals);
+  } else {
+    displayAllMeals(data.meals.slice(0, 6));
+  }
 };
 
 const displayAllMeals = (meals) => {
@@ -28,8 +33,9 @@ const displayAllMeals = (meals) => {
             <div class="px-6">
               <h3 class="text-2xl font-bold">${meal.strMeal}</h3>
               <p class="text-lg leading-[30px] text-[#706F6F] mt-4 mb-6">
-                There are many variations of passages of available, but the
-                majority have suffered
+                This dish features a harmonious blend of flavors, with various interpretations available, 
+                ensuring a delightful culinary experience.
+
               </p>
               <button class="text-[#FFC107] font-semibold text-lg underline">
                 View Details
@@ -42,6 +48,10 @@ const displayAllMeals = (meals) => {
 
     console.log(meal);
   });
+};
+
+const handleShowAll = () => {
+  loadAllMeals(true);
 };
 
 loadAllMeals();
