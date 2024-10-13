@@ -115,13 +115,17 @@
           Your Favourite Food
         </h1>
 
-        <!-- food cart container -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 justify-items-center gap-6">
+        <!-- meals cart container -->
+        <div 
+        id="meals-container"
+        class="grid grid-cols-1 sm:grid-cols-2 justify-items-center gap-6">
           <!-- card -->
-          <div class="flex items-center justify-center border rounded-lg">
+          <div
+            class="flex items-center justify-center border rounded-lg hover:bg-gray-100 duration-200 ease-in-out"
+          >
             <!-- image -->
             <img
-              class="rounded-lg h-[300px] w-[230px]"
+              class="rounded-lg h-[300px] w-[230px] object-cover"
               src="./assets/Rectangle 3980.png"
               alt=""
             />
@@ -132,9 +136,7 @@
                 There are many variations of passages of available, but the
                 majority have suffered
               </p>
-              <button
-                class="text-[#FFC107] font-semibold text-lg underline hover:scale-105 duration-300"
-              >
+              <button class="text-[#FFC107] font-semibold text-lg underline">
                 View Details
               </button>
             </div>
@@ -283,5 +285,8 @@
         </fieldset>
       </form>
     </footer>
+
+    <!-- script -->
+     <script src="./scripts/app.js"></script>
   </body>
 </html>
