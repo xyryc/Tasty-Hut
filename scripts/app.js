@@ -107,11 +107,16 @@ const mealDetails = async (idMeal) => {
   detailsModal.showModal();
 };
 
-const handleSearch = () => {
+const handleSearch = async () => {
   // document.getElementById('spinner').style.display = 'block'
 
   const searchText = document.getElementById("search-box").value;
-  console.log(searchText)
+
+  const response = await fetch(
+    `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`
+  );
+  const data = await response.json();
+  displayAllMeals(data.meals)
 };
 
 loadAllMeals();
