@@ -15,6 +15,8 @@ const displayAllMeals = (meals) => {
   const mealsContainer = document.getElementById("meals-container");
   // empty the meals container intially
   mealsContainer.innerHTML = "";
+  document.getElementById("spinner").style.display = "none";
+  document.getElementById("meals-container").classList.add("grid");
 
   meals.forEach((meal) => {
     const div = document.createElement("div");
@@ -59,7 +61,6 @@ const mealDetails = async (idMeal) => {
     `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`
   );
   const data = await response.json();
-  console.log(data.meals[0].strMeal);
 
   const modalContainer = document.getElementById("modal-container");
   modalContainer.innerHTML = `
@@ -108,15 +109,30 @@ const mealDetails = async (idMeal) => {
 };
 
 const handleSearch = async () => {
-  // document.getElementById('spinner').style.display = 'block'
-
+  document.getElementById("spinner").style.display = "block";
+  document.getElementById("meals-container").innerText = "";
   const searchText = document.getElementById("search-box").value;
 
   const response = await fetch(
     `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchText}`
   );
   const data = await response.json();
-  displayAllMeals(data.meals)
+
+  // Check if the 'meals' property is empty or undefined
+  if (!data.meals || data.meals.length === 0) {
+    document.getElementById("spinner").style.display = "none";
+    document.getElementById("meals-container").classList.remove("grid");
+
+    document.getElementById("meals-container").innerHTML = `
+    <div class="text-center ">
+      <h3 class="text-xl text-gray-500">No meals found with search term: <span class="text-red-500">${searchText}</span>.</h3>
+      <h3 class="text-xl text-gray-500">How about trying another dish?</h3>
+  `;
+  } else {
+    setTimeout(() => {
+      displayAllMeals(data.meals);
+    }, 1000);
+  }
 };
 
 loadAllMeals();
